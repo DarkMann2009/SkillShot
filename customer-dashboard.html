@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - SkillShot</title>
+    <style>
+        /* Similar styles to those from before */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Customer Dashboard</h1>
+    </header>
+
+    <section id="customer-dashboard" class="customer-dashboard">
+        <h2>Welcome Customer</h2>
+
+        <!-- Customer Service Request -->
+        <div class="dashboard-container">
+            <div class="dashboard-form">
+                <h3>Request a Service</h3>
+                <form>
+                    <label for="search-service">Service</label>
+                    <input type="text" id="search-service" placeholder="Search for services" required>
+
+                    <button type="button" class="btn" onclick="searchFreelancers()">Search Freelancers</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check if the user role is 'customer' before displaying the customer dashboard
+        window.onload = function () {
+            const userRole = localStorage.getItem('userRole');
+
+            if (userRole !== 'customer') {
+                window.location.href = 'sign-up.html'; // Redirect to sign-up if not a customer
+            }
+        };
+
+        // Function to simulate searching for freelancers
+        function searchFreelancers() {
+            alert("Searching for freelancers...");
+        }
+    </script>
+
+</body>
+</html>

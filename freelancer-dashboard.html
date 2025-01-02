@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Dashboard - SkillShot</title>
+    <style>
+        /* Similar styles to those from before */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Freelancer Dashboard</h1>
+    </header>
+
+    <section id="freelancer-dashboard" class="freelancer-dashboard">
+        <h2>Welcome Freelancer</h2>
+
+        <!-- Freelancer Profile Editing -->
+        <div class="dashboard-container">
+            <div class="dashboard-form">
+                <h3>Edit Your Profile</h3>
+                <form>
+                    <label for="freelancer-name">Name</label>
+                    <input type="text" id="freelancer-name" placeholder="Your Name" required>
+
+                    <label for="freelancer-email">Email</label>
+                    <input type="email" id="freelancer-email" placeholder="Your Email" required>
+
+                    <label for="freelancer-services">Services</label>
+                    <input type="text" id="freelancer-services" placeholder="Services Offered" required>
+
+                    <button type="submit" class="btn">Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check if the user role is 'freelancer' before displaying the freelancer dashboard
+        window.onload = function () {
+            const userRole = localStorage.getItem('userRole');
+
+            if (userRole !== 'freelancer') {
+                window.location.href = 'sign-up.html'; // Redirect to sign-up if not a freelancer
+            }
+        };
+    </script>
+
+</body>
+</html>
